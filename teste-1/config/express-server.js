@@ -29,7 +29,7 @@ module.exports = () => {
   // Create Server
   const server = http.createServer(app)
 
-  // Getting the port 
+  // Getting the port and server listening
   const PORT = process.env.PORT || 8080;
 
   server.listen(PORT, () => {
