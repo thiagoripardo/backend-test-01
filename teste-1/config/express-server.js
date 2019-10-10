@@ -1,17 +1,30 @@
 const express = require('express');
 const http = require('http');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const consign = require('consign');
 require('dotenv/config');
 
 module.exports = () => {
-  
+
   // Express instance
   const app = express();
 
-  app.get('/', function (req, res) {
-      res.json({message: 'Root API'});
-  })
+  const debug = Boolean(Number(process.env.DEBUG)) || false;
 
-  // API routes here...
+  // Setting up general middlewares
+  if (debug) {
+    app.use(morgan('dev'));
+  }
+  app.use(bodyParser.urlencoded({
+    extended: false
+  }));
+  app.use(bodyParser.json());
+
+  // Auto load API scripts
+  consign()
+  .include('routes')
+  .into(app);
 
   // Create Server
   const server = http.createServer(app)
