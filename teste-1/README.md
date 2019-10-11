@@ -44,6 +44,8 @@ npm run test
 Filter: GET /users?role=Manager
 Sort: GET /users?orderBy=name&order=desc
 Pagination: GET /users?pageSize=5&pageNumber=1
-Detail: GET /users/54
+Users Detail: GET /users/54
+Analysis: GET /analisys
+Analysis Detail: GET /analisys/3
 
 ```
