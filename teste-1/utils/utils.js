@@ -59,17 +59,26 @@ const getUsers = () => {
     return users;
 }
 
+// Simulate getting a user by id
+const getUsersByClientId = (id) => {
+    let user;
+    if (!isNaN(parseInt(id))) {
+        user = users.find(element => (element.client_id === parseInt(id)));
+    }
+    return user;
+}
+
 // Simulate getting a role by id
 const getRoleById = (id) => {
-    let role = roles.filter(element => (element.id === id));
-    return role[0];
+    let role = roles.find(element => (element.id === id));
+    return role;
 }
 
 // Simulate getting modules by role id
 const getModulesByRoleId = (id) => {
     let filteredModules = []
     let filteredModuleRole = moduleRole.filter(element => (element.role_id === id));
-    // console.log(filteredModuleRole)
+
     filteredModuleRole.forEach(element => {
         filteredModules = filteredModules.concat(modules
             .filter(_module => (_module.id === element.module_id))
@@ -111,6 +120,7 @@ module.exports = {
     getAnalisys,
     getAnalisysById,
     getUsers,
+    getUsersByClientId,
     getRoleById,
     getModulesByRoleId,
     filterByKey,

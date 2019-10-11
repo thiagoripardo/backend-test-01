@@ -16,7 +16,7 @@ describe(`Analisys Routes`, () => {
         done();
     });
 
-    it('GET - /analisys returns 200 with expected payload', (done) => {
+    it('GET All - /analisys returns 200 with expected payload', (done) => {
         request.get(`${baseURL}/analisys`, (error, response) => {
             expect(response).toBeDefined();
             expect(response.statusCode).toEqual(200);
@@ -25,7 +25,7 @@ describe(`Analisys Routes`, () => {
         });
     });
 
-    it('GET - /analisys/test returns 404 with expected payload', (done) => {
+    it('GET Datail - /analisys/test returns 404 with expected payload', (done) => {
         request.get(`${baseURL}/analisys/test`, (error, response) => {
             const jsonBody = JSON.parse(response.body);
 
@@ -37,7 +37,7 @@ describe(`Analisys Routes`, () => {
         });
     });
 
-    it('GET - /analisys/1 returns 200 with expected payload', (done) => {
+    it('GET Detail - /analisys/1 returns 200 with expected payload', (done) => {
         request.get(`${baseURL}/analisys/1`, (error, response) => {
             expect(response).toBeDefined();
             expect(response.statusCode).toEqual(200);

@@ -35,5 +35,6 @@ exports.userList = (req, res) => {
 
 // Display detail page for a specific User.
 exports.userDetail = (req, res) => {
-    res.send('NOT IMPLEMENTED: User detail: ' + req.params.id);
+    let responseJson = utils.getUsersByClientId(req.params.clientId);
+    responseJson ? res.json(responseJson) : res.status(404).json({error: `Sorry, the id:${req.params.clientId} doesn't exists.`});
 }
