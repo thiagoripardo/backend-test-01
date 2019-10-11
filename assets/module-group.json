@@ -1,0 +1,23 @@
+[
+    {
+      "id": 2,
+      "name": "User Management",
+      "tag": "user-management",
+      "route": "/user-management",
+      "hierarchy_level": 0
+    },
+    {
+      "id": 3,
+      "name": "Main",
+      "tag": "main",
+      "route": "/main",
+      "hierarchy_level": 0
+    },
+    {
+      "id": 1,
+      "name": "Experimental",
+      "tag": "exp-rimental",
+      "route": "/prototype",
+      "hierarchy_level": 0
+    }
+  ]
